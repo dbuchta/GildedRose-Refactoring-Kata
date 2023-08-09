@@ -39,5 +39,14 @@ namespace GildedRoseKata
             app.UpdateQuality();
             Assert.Equal("foo", Items[0].Name);
         }
+
+        [Fact]
+        public void ReducesQualityBy1After1Day()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 60, Quality = 10 } };
+            GildedRose app = new(Items);
+            app.UpdateQuality();
+            Items[0].Quality.Should().Be(9);
+        }
     }
 }
