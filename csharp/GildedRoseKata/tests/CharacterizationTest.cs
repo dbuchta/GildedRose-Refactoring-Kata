@@ -18,7 +18,7 @@ namespace GildedRoseKata
             String output = sb.ToString();
 
 
-            string expectedOutput = File.ReadAllText("CharacterizationTest.txt");
+            string expectedOutput = File.ReadAllText("tests/CharacterizationTest.txt");
 
             Assert.Equal(expectedOutput.Trim(), output.Trim());
         }

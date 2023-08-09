@@ -29,12 +29,15 @@ namespace GildedRoseKata
             // Use your preferred assertion library (already included - pick one delete others)
             // xunit default
             Assert.Equal(initialQuality, firstItem.Quality);
+        }
 
-            // fluentassertions
-            firstItem.Quality.Should().Be(initialQuality);
-
-            // shouldly
-            firstItem.Quality.ShouldBe(initialQuality);
+        [Fact]
+        public void Foo()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
+            GildedRose app = new(Items);
+            app.UpdateQuality();
+            Assert.Equal("fixme", Items[0].Name);
         }
     }
 }
