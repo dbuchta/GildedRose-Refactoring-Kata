@@ -9,7 +9,7 @@ namespace GildedRoseKata
     public class CharacterizationTest
     {
         [Fact]
-        public void DoesWhatItDoes()
+        public void FullTextTest()
         {
             var sb = new StringBuilder();
             Console.SetOut(new StringWriter(sb));
